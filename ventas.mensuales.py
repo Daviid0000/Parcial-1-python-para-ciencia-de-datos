@@ -33,9 +33,38 @@ ventas_mensuales = [
 lista_ventas = pd.DataFrame(ventas_mensuales)
 def ventas():
 
+  
+
   lista_ventas["total_ventas"]
   lista_ventas["total"] = lista_ventas["total_ventas"].cumsum()
 
+  ventas_trimestre1 = lista_ventas["mes"] == "Marzo" 
+  ventas_trimestre2 = lista_ventas["mes"] == "Junio" 
+  ventas_trimestre3 = lista_ventas["mes"] == "Septiembre" 
+  ventas_trimestre4 = lista_ventas["mes"] == "Diciembre" 
+  ventas_trimestre5 = lista_ventas["mes"] == "Marzo 2" 
+  ventas_trimestre6 = lista_ventas["mes"] == "Junio 2" 
+  ventas_trimestre7 = lista_ventas["mes"] == "Septiembre 2" 
+  ventas_trimestre8 = lista_ventas["mes"] == "Diciembre 2" 
+
+  ventas_trimestre1 = lista_ventas[ventas_trimestre1]
+  ventas_trimestre2 = lista_ventas[ventas_trimestre2]
+  ventas_trimestre3 = lista_ventas[ventas_trimestre3]
+  ventas_trimestre4 = lista_ventas[ventas_trimestre4]
+  ventas_trimestre5 = lista_ventas[ventas_trimestre5]
+  ventas_trimestre6 = lista_ventas[ventas_trimestre6]
+  ventas_trimestre7 = lista_ventas[ventas_trimestre7]
+  ventas_trimestre8 = lista_ventas[ventas_trimestre8]
+  print(f"ventas de trimestre 1: {ventas_trimestre1}")
+  print(f"ventas de trimestre 2: {ventas_trimestre2}")
+  print(f"ventas de trimestre 3: {ventas_trimestre3}")
+  print(f"ventas de trimestre 4: {ventas_trimestre4}")
+  print(f"ventas de trimestre 5: {ventas_trimestre5}")
+  print(f"ventas de trimestre 6: {ventas_trimestre6}")
+  print(f"ventas de trimestre 7: {ventas_trimestre7}")
+  print(f"ventas de trimestre 8: {ventas_trimestre8}")
+  print()
+  
   # filtrando total de ventas por mayor a 20000
   result = lista_ventas["total"] > 20000
   result = lista_ventas[result]
